@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
+/* LOGO Y DESCRIPCION - escena1*/
+
+.fondo{
+    padding: 20px;
+    background: linear-gradient(#4807a9,rgb(52, 126, 211));
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+    font-size: 56px;
+    display: flex;
+    justify-content: center;   
+}
+
+.cont-texto{
+    display:flex;
+    justify-content: center;
+    padding: 0px 50px;
+    align-items: center;
+    
+}
+
+p{
+    color:white;
+    font-family: "Madimi One", sans-serif;
+
+}
+
+
+/* menú - escena2*/
+
+a-scene {
+    position: relative;
+    z-index: 0;  
+}
+
+.contenedor{
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    z-index: 10;
+}
+
+
+a-scene img
+{
+  display:flex;
+  width: 100px;
+}
+
+.menu{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    text-decoration:none;
+}
+
+
+
+
