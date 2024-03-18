@@ -2,98 +2,133 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport">
-    <title>Peces</title>
+  <meta charset="UTF-8">
+  <meta name="viewport">
+  <title>Peces</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+  <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
 
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
-    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
+  <script src="https://cdn.rawgit.com/aframevr/aframe/v1.2.0/dist/aframe-html-shader.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@c-frame/aframe-physics-system@4.2.2/dist/aframe-physics-system.min.js"></script>
+  <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
 
-    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
-    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
-    <script src="https://cdn.rawgit.com/aframevr/aframe/v1.2.0/dist/aframe-html-shader.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@c-frame/aframe-physics-system@4.2.2/dist/aframe-physics-system.min.js"></script>
-    <script
-        src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/scriptcard.js"></script>
+  <script src="assets/js/scriptcard.js"></script>
+  <script src="assets/js/fishmove.js"></script>
 
 
-    <!--boostrap-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Agregar esta línea -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!--boostrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Agregar esta línea -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-    <a-scene cursor="rayOrigin: mouse">
+  <a-scene cursor="rayOrigin: mouse">
 
-      
-
-        <!--Objeto de modal-->
-        <!-- <a-box id="card1" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" click-handler-card1 data-id="65f5832cbdf8b55b6cc98212"></a-box> -->
-        <a-box id="card2" position="1 0.5 -3" rotation="0 45 0" color="#FFC65D" click-handler-card2 data-id="65f5931cbdf8b55b6cc98216"></a-box>
-
-         <!--lataroja-->
-         <a-entity>
-          <a-entity id="card1" click-handler-card1 data-id="65f5832cbdf8b55b6cc98212" animation="property: rotation; to: 0 -360 0; loop: true; dur: 10000" gltf-model="./assets/models/lata1.glb" scale="9 9 9" position="-1.64456 1.262 -2.7076"></a-entity>
-        </a-entity>
-
-        <!--Burbuja-->
-        
-          <a-entity material="opacity: 5.0; transparent: true" class="silueta" gltf-model="./assets/models/burbujita.glb" animation="property: rotation; to: 0 -360 0; loop: true; dur: 10000" scale="15 15 15" position="-1.56331 6.48157 -14.04761" visible=""></a-entity>
-       
+    <!-- fondo -->
+    <a-entity class="fondo"
+      environment="preset: yavapai; groundColor: #f0f0f0;  groundColor2: #c6d8e6;  groundTexture: walkernoise; horizonColor: #585fbb; skyColor: blue; dressingColor: #ffff"
+      position="0 -1 0">
+      <a-entity class="environment" position="0 50 0"
+        light="type: hemisphere; color: #8080ff; intensity: 0.6; groundColor: #f0f0f0"></a-entity>
+    </a-entity>
 
 
-        <!--Menu-->
-        <div class="contenedor">
-            <a class="menu" href="escena1.html">
-                <img src="assets/models/pez.svg" alt="icono">
-                <p>Home</p>
-            </a>
+    <!--¿cuánto tiempo tardan en descomponerse?-->
+    <a-image src="assets/models/pregunta.png" width="3" height="1.5" material="" geometry="width: 4.8; height: 0.16"
+      position="0 2.469 -2.38056"></a-image>
+
+    <!--lataceleste-->
+    <a-entity id="card1" click-handler-card1 data-id="65f5832cbdf8b55b6cc98212"
+      animation="property: rotation; to: 0 -360 0; loop: true; dur: 10000" gltf-model="./assets/models/lata2.glb"
+      scale="1 1 1" position="-2.30184 1.262 -2.708" rotation="0 -58.475 0"></a-entity>
+
+    <!--Botella1-->
+    <a-entity id="card2" position="-1.19956 0.5 -3" rotation="52.674 175.641 0" click-handler-card2
+      data-id="65f5931cbdf8b55b6cc98216" animation="property: rotation; to: 0 360 0; loop: true; dur: 40000"
+      gltf-model="./assets/models/bottle1.glb" scale=""></a-entity>
+
+    <!--bolsas negras con llantas-->
+    <a-entity id="card3" position="2.09009 -1.045 -4.26" rotation="5 20 0" click-handler-card3="" data-id="65f872cb11c160f7e5ab7d1a" gltf-model="./assets/models/bolsas2.glb" scale="3 3 3">
+    </a-entity>
+
+    <!--Burbuja blanca-->
+    <a-entity material="" class="burbuja blanca" gltf-model="./assets/models/burbujita.glb" animation="property: rotation; to: 0 -360 0; loop: true; dur: 6000" scale="10 10 10" position="-20.217 3.017 -14.048" rotation="0 119.99999999999999 0"></a-entity>
+
+    <a-entity material="" class="burbuja blanca" gltf-model="./assets/models/burbujita.glb"
+      animation="property: rotation; to: 0 -360 0; loop: true; dur: 6000" scale="10 10 10"
+      position="16.26838 3.017 -14.048" rotation="0 -217.2420516558569 0">
+    </a-entity>
+
+
+    <!--pez marron-->
+    <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 20000">
+      <a-entity class="pez marron" fish-move position="9.199 0.901 -16.101" gltf-model="./assets/models/fish2.glb"
+        rotation="0.76 300 0.59"></a-entity>
+    </a-entity>
+
+    <!--pez azul-->
+    <a-entity animation="property: rotation; to: 0 180 0; loop: true; dur: 20000">
+      <a-entity class="pez azul" fish-move position="5 5 -16.101" gltf-model="./assets/models/fish5.glb"
+        rotation="0.76 300 0.59"></a-entity>
+    </a-entity>
+
+    <!--pez verde-->
+    <a-entity animation="property: rotation; to: 0 -360 0; loop: true; dur: 20000">
+      <a-entity class="pez verde" fish-move position="-13.68633 0.901 -17.22004" gltf-model="./assets/models/fish3.glb"
+        rotation="0.76 -660 0"></a-entity></a-entity>
+
+    <!--pez amarillo-->
+    <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 20000">
+      <a-entity class="pez amarillo" fish-move position="-9.424 1.83153 -34.165" gltf-model="./assets/models/fish4.glb"
+        rotation="0.76 -100 0"></a-entity>
+    </a-entity>
+
+
+    <!--burbujas png-->
+    <a-sky class="burbuja" src="./assets/models/burbuja.png" opacity="0.5" repeat="7 10" scale="0.2 0.2 0.2"
+      animation="property: rotation; to: 90 0 0; dur: 16000; loop: true" class="copo" rotation="2.29 4.20996 0"
+      position="0 5.93027 -0.33928">
+    </a-sky>
+
+  </a-scene>
+
+
+
+
+  <!--Menu-->
+  <div class="contenedor">
+    <a class="menu" href="escena1.html">
+      <img src="assets/models/pez.svg" alt="icono">
+      <p class="enlace">Home</p>
+    </a>
+  </div>
+
+  <!--Modal-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitulo"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        
-        
-        <!-- fondo -->
-        <a-entity class="fondo" environment="preset: yavapai; groundColor: #a4df8b; groundColor2: #71dde5; groundTexture: walkernoise; horizonColor: #66b4f0; skyColor: #0031f5; dressingColor: #ffff; gridColor: #5392e4" position="0 -1 0" visible="">
-            <a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #91a4f0; intensity: 0.6; groundColor: #dfcd8b" visible=""></a-entity><a-entity class="environment" position="0.5 1 0" light="intensity: 0.6; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible=""></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 9.76" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible=""></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: gradientshader; topColor: [object Object]; bottomColor: [object Object]" visible="" geometry=""></a-sky><a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #8098fa; intensity: 0.6; groundColor: #a4df8b" visible=""></a-entity><a-entity class="environment" position="0.5 1 0" light="intensity: 0.6; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible=""></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 9.76" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible=""></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: gradientshader; topColor: [object Object]; bottomColor: [object Object]" visible="" geometry=""></a-sky>
-        </a-entity>
-
-        <!--burbujas-->
-        <a-sky class="burbuja" src="./assets/models/burbuja.png" opacity="0.5" repeat="15 10" scale="0.2 0.4 0.2"
-            animation="property: rotation; to: 90 0 0; dur: 16000; loop: true" class="copo" rotation="2.29 4.20996 0"
-            position="0 5.93027 -0.33928">
-        </a-sky>
-
-        
-        
-       
-    </a-scene>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalTitulo"></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p id="modalContenido"></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
+        <div class="modal-body">
+          <p class="contenido" id="modalContenido"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
-
-     
-
-
-
-    </body>
+    </div>
+  </div>
+</body>
 </html>

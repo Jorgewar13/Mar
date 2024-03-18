@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap');
 
 /* LOGO Y DESCRIPCION - escena1*/
 
 .fondo{
     padding: 20px;
-    background: linear-gradient(#4807a9,rgb(52, 126, 211));
+    background: linear-gradient(#4807a9,#363ABF);
 }
 
 .link{
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 56px;
     display: flex;
@@ -23,15 +24,27 @@
     
 }
 
-p{
-    color:white;
-    font-family: "Madimi One", sans-serif;
+.entrada {
+    color: rgb(255, 255, 255);
+    font-family: "Fuzzy Bubbles", sans-serif;
+    font-style: normal;
+    font-size: 20px; 
+    text-align: center;
+    padding: 0 20px; 
+}
 
+/* Ajustes para pantallas de tamaño medio */
+@media (min-width: 768px) {
+    .entrada {
+        font-size: 20px; /* Tamaño de fuente ligeramente aumentado para pantallas medianas */
+        padding: 0 100px; /* Espaciado ligeramente aumentado para pantallas medianas */
+    }
 }
 
 
-/* menú - escena2*/
 
+
+/* menú - escena2*/
 a-scene {
     position: relative;
     z-index: 0;  
@@ -59,6 +72,17 @@ a-scene img
     text-decoration:none;
 }
 
+/* menú - escena3*/
+.contenido {
+    color:black;
+}
 
+.modal-content {
+    backdrop-filter: blur(5px); /* Agrega el efecto de desenfoque al modal */
+    background-color: #ffffff62
+}
 
-
+.enlace{
+    color:white;
+    text-decoration: none;
+}

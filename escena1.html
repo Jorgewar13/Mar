@@ -20,19 +20,21 @@
   <!--ENTRADA-->
   <!--LOGO Y DESCRIPCION-->
   <div class="fondo">
-    <a class="link" href="escena2.html" title="Bienvenido"><img src="" alt="logo"></a>
+    <!-- <a class="link" href="escena2.html" title="Bienvenido"><img src="assets/models/logoplasctic.png" alt="logo"></a> -->
     <div class="cont-texto">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum error soluta facilis distinctio, id possimus
-      beatae velit praesentium, perferendis consequuntur tempora vitae dignissimos magnam veritatis necessitatibus!
-      Tempore ea a eveniet?</p>
+    <p class="entrada">¡Bienvenidos a la "Aventura Oceánica: Rescate del Mar"!<br>Únete a una misión emocionante para eliminar los peligrosos plásticos en nuestros océanos</p>
     </div>
   </div>
 
+
   <!--Escena-->
-  <a-scene fog="type: linear; color: #3F7AD9; near:20; far:100" frustum-culling="true">
+  <a-scene fog="type: linear; color: #363ABF; near:20; far:100" frustum-culling="true" joystick cursor="rayOrigin: mouse">
     <a-sky color="#5183E6"></a-sky>
 
-    <!--burbujas-->
+  <!--logo-->
+  <a-entity class="loogo" gltf-model="./assets/models/logoplastic.gltf" scale="60 60 60" position="0.103 4.348 -4.826"></a-entity>
+
+  <!--burbujas-->
     <a-sky class="burbuja" src="./assets/models/burbuja.png" opacity="0.5" repeat="20 20" scale="0.006 0.006 0.006"
       animation="property: rotation; to: 90 0 0; dur: 16000; loop: true" rotation="0 -85.288 0"
       position="-5.748 4.454 -0.339" geometry="primitive:cylinder">
@@ -40,7 +42,7 @@
         dur="9000"></a-animation>
     </a-sky>
 
-    <!-- pescadoazul-->
+  <!-- pescadoazul-->
     <a-entity>
       <a-entity animation-mixer gltf-model="./assets/models/fish.glb" scale="0.5 0.5 0.5"
         position="4.568 1.262 -14.048"></a-entity>
@@ -48,17 +50,21 @@
       </a-animation>
     </a-entity>
 
-    <!--medusa -->
-    <a-entity animation-mixer gltf-model="./assets/models/medusa.glb" scale="0.015 0.015 0.015"
-      position="-3.15088 -1.42679 -11.26312" rotation="0 360 0" class="medusa">
+  <!--play-->
+  <a-box class="play" gltf-model="./assets/models/play.gltf" scale="60 60 60" position="0.103 4.348 -4.826"></a-box>
+    
+  
+
+  
+  <!--medusa -->
+    <a-entity animation-mixer="" gltf-model="./assets/models/medusa.glb" scale="0.015 0.015 0.015" position="-8.731 0.243 -11.263" rotation="-2.64 1.18 0" class="medusa">
+      <a-animation attribute="rotation" from="-5 0 0" to="5 5 0" repeat="indefinite" direction="alternate"></a-animation>
     </a-entity>
 
     <!--ejemplo de icosand -->
-    <a-icosahedron static-body class="target" color="white" radius="1" position="2 3 -5">
-      <a-animation attribute="rotation" from="5 0 -5" to="20 0 0" repeat="indefinite" direction="alternate"
-        dur="800"></a-animation>
-    </a-icosahedron>
-
+    <!-- <a-icosahedron static-body="sphereRadius:NaN" class="target" color="white" radius="1" position="-8.362 0.34 -5" rotation="19.387 0 -0.204">
+      <a-animation attribute="rotation" from="5 0 -5" to="20 0 0" repeat="indefinite" direction="alternate" dur="800"></a-animation>
+    </a-icosahedron> -->
 
     <!-- Lights -->
     <a-light type="directional" castShadow="true" intensity="0.4" color="#D0EAF9;" position="5 3 1"></a-light>
@@ -83,12 +89,7 @@
         dur="15000" easing="linear"></a-animation>
     </lp-cone>
 
-    <!--caja-->
-    <a-box class="iceberg" amplitude="0.1" segments-radial="5" segments-height="2" height="0.5" radius-top="0.25"
-      radius-bottom="0.25" position="-5 -0.2 -3.5">
-      <a-animation attribute="rotation" from="5 0 -5" to="5 0 0" repeat="indefinite" direction="alternate"
-        dur="800"></a-animation>
-    </a-box>
+    
 
     <!-- Ocean -->
     <a-ocean depth="50" width="50" opacity="0.5" amplitude="0" amplitude-variance="0.15" speed="1.5" speed-variance="1"
