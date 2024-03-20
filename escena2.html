@@ -1,8 +1,3 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,19 +8,19 @@
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
-
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.rawgit.com/aframevr/aframe/v1.2.0/dist/aframe-html-shader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@c-frame/aframe-physics-system@4.2.2/dist/aframe-physics-system.min.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
-<link rel="stylesheet" href="assets/css/style.css">
-   
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/p.js"></script> 
+
 </head>
 
 <body>
 
-    <a-scene>
+    <a-scene physics="gravity: -9">
 
         <!--Menu-->
         <div class="contenedor">
@@ -34,50 +29,37 @@
                 <p>Home</p>
             </a>
         </div>
-        
-        
+
+
         <!-- fondo -->
         <a-entity class="fondo" environment="preset: yavapai; groundColor: #a4df8b; groundColor2: #71dde5; groundTexture: walkernoise; horizonColor: #66b4f0; skyColor: #0031f5; dressingColor: #ffff; gridColor: #5392e4" position="0 -1 0" visible="">
-            <a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #91a4f0; intensity: 0.6; groundColor: #dfcd8b" visible=""></a-entity><a-entity class="environment" position="0.5 1 0" light="intensity: 0.6; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible=""></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 9.76" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible=""></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: gradientshader; topColor: [object Object]; bottomColor: [object Object]" visible="" geometry=""></a-sky><a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #8098fa; intensity: 0.6; groundColor: #a4df8b" visible=""></a-entity><a-entity class="environment" position="0.5 1 0" light="intensity: 0.6; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible=""></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 9.76" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible=""></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: gradientshader; topColor: [object Object]; bottomColor: [object Object]" visible="" geometry=""></a-sky>
+            <a-entity class="environment" position="0 0 0" light="type: hemisphere; color: #91a4f0; intensity: 0.6; groundColor: #dfcd8b" visible="" ></a-entity><a-entity class="environment" position="0  0" light="intensity: 0.6; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible=""></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 9.76" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible=""></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: gradientshader; topColor: [object Object]; bottomColor: [object Object]" visible="" geometry=""></a-sky><a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #8098fa; intensity: 0.6; groundColor: #a4df8b" visible=""></a-entity><a-entity class="environment" position="0.5 1 0" light="intensity: 0.6; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible=""></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 9.76" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible=""></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: gradientshader; topColor: [object Object]; bottomColor: [object Object]" visible="" geometry=""></a-sky>
         </a-entity>
 
-        <!--burbujas-->
-        <a-sky class="burbuja" src="./assets/models/burbuja.png" opacity="0.5" repeat="15 10" scale="0.2 0.4 0.2"
-            animation="property: rotation; to: 90 0 0; dur: 16000; loop: true" class="copo" rotation="2.29 4.20996 0"
-            position="0 5.93027 -0.33928"></a-sky>
-
         
+        <a-entity dynamic-body position="0 0 0" width="5" height="5" depth="5" rotation="0 0 0">
         
-        <!--lataroja-->
-        <a-entity>
-                <a-entity class="lata" animation="property: rotation; to: 0 -360 0; loop: true; dur: 10000" gltf-model="./assets/models/lata1.glb" scale="9 9 9" position="-1.64456 1.262 -2.7076"></a-entity>
+            <a-entity class="lata" animation="property: rotation; to: 1 1 1; loop: true; dur: 10000" src="./assets/models/lata1.glb"  scale="9 9 9" position="0 0 0"></a-entity>
         </a-entity>
-       
-
-       
-
-        <!--oso run-->
-        <a-entity animation="property: rotation; to: 0 -360 0; loop: true; dur: 20000">
-            <a-entity gltf-model="./assets/polar_run.glb" scale="2 2 2" position="4.56841 -0.95721 -14.04761" oso_run></a-entity>
-        </a-entity>
-
-        <!--fish1-->
-        <a-entity animation="property: rotation; to: 0 -360 0; loop: true; dur: 20000">
-            <a-entity gltf-model="./assets/polar_run.glb" scale="2 2 2" position="4.56841 -0.95721 -14.04761" oso_run></a-entity>
-        </a-entity>
-
-       
-
         
 
-       
-
         
+        <a-entity id="camera" camera position="1 0 3" look-controls wasd-controls limit-camera>
+            <a-box width="5" height="5" id="user" static-body="shape: box; mass: 1"></a-box>
+          </a-entity>
+        
+        <!-- suelo -->
+        <a-box position="0 -1 0" depth="100" width="100" height="0.1" static-body="shape: box; mass: 1"
+            visible="false"></a-box>
 
-
-       
-
+        <!-- objetos dinámicos -->
+        <a-box position="1 1 1" rotation="0 45 0" color="#4CC3D9" dynamic-body="shape: box; mass: 1"></a-box>
+        <a-sphere position="2 1 2" radius="1.25" color="#EF2D5E" dynamic-body="shape: sphere; mass: 1"></a-sphere>
+        <a-cylinder position="3 1 3 " radius="0.5" height="1.5" color="#FFC65D"
+            dynamic-body="shape: cylinder; mass: 1"></a-cylinder>
 
     </a-scene>
+
+</body>
 
 </html>
