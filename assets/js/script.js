@@ -1,3 +1,4 @@
+
 const shoot = () => {
   const bullet = document.createElement("a-sphere");
   let pos = myCamera.getAttribute("position");
@@ -8,23 +9,29 @@ const shoot = () => {
   bullet.setAttribute("src", "https://i.imgur.com/H8e3Vnu.png ");
   myScene.appendChild(bullet);
   bullet.addEventListener('collide', shootCollided); // cuando hay una collide(evento) choque entre objetos se activa la funcion shootCollided(manejador de ebventos)
-
-
 };
-// shootCollided: ijnfroma
-const shootCollided = event => { //event:parametro| event es el objeto de evento que proporciona información sobre la colisión, como los objetos involucrados, las propiedades de la colisión, etc.
-  if (event.detail.body.id ==='floor'){ //  se refiere a la etiqueta <plane>
+
+const shootCollided = event => {
+  if (event.detail.body.id === 'floor') {
     console.log('hit the floor');
-    event.detail.el.removeEventListener('collide', shootCollided); //event.detail.el = <a-icosahedron> / ya no se ejecuta esta funcion
-    myScene.removeChild(e.detail.target.el) //event.detail.el = <a-icosahedron>
-  }else if (event.detail.body.el.className === 'target'){ //</a-icosahedron>
+    event.detail.el.removeEventListener('collide', shootCollided);
+    myScene.removeChild(event.detail.target.el);
+  } else if (event.detail.body.el.className === 'target') {
     console.log('hit the target');
     event.detail.target.el.removeEventListener('collide', shootCollided);
-    myScene.removeChild(event.detail.target.el); //<a-icosahedron>
-    myScene.removeChild(event.detail.body.el); //sphera
-  }
-  if(document.querySelectorAll('.target').length === 0){
-    console.log('you win');
+    myScene.removeChild(event.detail.target.el);
+    myScene.removeChild(event.detail.body.el);
+    
+    // Incrementar el puntaje y actualizar el texto en pantalla
+    const scoreText = document.getElementById('scoreText');
+    let score = parseInt(scoreText.getAttribute('value').split(':')[1].trim()); // Obtener el puntaje actual
+    score++;
+    scoreText.setAttribute('value', `Score: ${score}`);
+    
+    // Verificar si todos los elementos objetivo han sido eliminados
+    if (document.querySelectorAll('.target').length === 0) {
+      console.log('you win');
+    }
   }
 };
 
@@ -33,3 +40,4 @@ document.onkeydown = event => {
     shoot();
   }
 };
+

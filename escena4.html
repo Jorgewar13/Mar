@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="assets/css/style.css">
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js"></script>
   <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
   <script src="https://codechangers.com/physics.js"></script>
@@ -14,11 +13,10 @@
   <a-scene id="myScene">
 
     <!--burbuja-->
-    <a-sky class="burbuja" src="./assets/models/burbuja.png" opacity="0.5" repeat="10 10" scale="0.01 0.01 0.01"
-      position="0 17.03 -0.339" rotation="82.776 0 0" geometry="primitive:circle">
-      <a-animation attribute="rotation" to="0 -360 0" dur="10000" easing="linear" repeat="indefinite"></a-animation>
+    <a-sky class="burbuja" src="./assets/models/burbuja.png" opacity="0.5" repeat="10 10" scale="0.01 0.01 0.01" position="0 11.036 -0.339" rotation="0.882 -92.115 0" geometry="primitive:cylinder">
+      <a-animation attribute="rotation" to="0 360 0" dur="50000" easing="linear" repeat="indefinite"></a-animation>
     </a-sky>
-
+    
 
     <!--luz-->
     <a-light type="directional" castShadow="true" intensity="0.4" color="#D0EAF9;" position="5 3 1"></a-light>
@@ -33,25 +31,52 @@
     </a-entity>
 
 
+    <!--Puntaje texto-->
+    <a-camera id="myCamera" position="0 1 0">
+      <a-entity id="scoreTextWrapper" position="-0.09 -0.07 -1.01">
+        <a-text id="scoreText" color="white" value="Score: 0" scale="0.3 0.3 0.3"></a-text>
+      </a-entity>
+      <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
+    </a-camera>
+
+    <!--Plano-->
     <a-plane id="floor" static-body height="1000" width="1000" position="0 -1.5 0" color="black"
       rotation="-90 0 0"></a-plane>
 
+
+    <!--Camara-->
     <a-camera id="myCamera" position="0 1 0">
       <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
     </a-camera>
 
+
+    <!--Plasticos-->
     <a-entity gltf-model="./assets/models/bottle1.glb" static-body class="target" color="white" radius="1"
       position="2 3 -5"><a-animation attribute="rotation" dur="20000" to="90 90 0" easing="linear"
-        repeat="indefinite"></a-animation></a-entity>
+        repeat="indefinite"></a-animation>
+    </a-entity>
+
     <a-entity gltf-model="./assets/models/bottle1.glb" static-body class="target" color="white" radius="1"
       position="2 3 -15"><a-animation attribute="rotation" dur="20000" to="90 0 0" easing="linear"
-        repeat="indefinite"></a-animation></a-entity>
+        repeat="indefinite"></a-animation>
+    </a-entity>
+
+    <a-entity gltf-model="./assets/models/bottle1.glb" static-body class="target" color="white" radius="1"
+      position="0 3 -10"><a-animation attribute="rotation" dur="20000" to="90 0 0" easing="linear"
+        repeat="indefinite"></a-animation>
+    </a-entity>
+
     <a-entity gltf-model="./assets/models/bolsa1.glb" static-body class="target" color="white" radius="1"
-      position="2 3 -10"></a-entity>
-    <a-entity gltf-model="./assets/models/lata2.glb" static-body class="target" color="white" radius="1"
-      position="-5.702 3 -12"></a-entity>
+      position="2 3 -10">
+    </a-entity>
 
+    <!--lata verde-->
+    <a-entity gltf-model="./assets/models/lata2.glb" static-body="sphereRadius:NaN" class="target" color="white" radius="1" position="-1.774 2.586 -3.722" velocity="">
+    <a-animation attribute="rotation" dur="20000" to="90 0 0" easing="linear"
+        repeat="indefinite"></a-animation>
+    </a-entity>
 
+    <!--Peces-->
     <a-entity class="pez marron" gltf-model="./assets/models/fish2.glb" position="9.199 0.901 -16.101" dynamic-static>
       <a-animation attribute="rotation" dur="20000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
     </a-entity>
@@ -59,7 +84,6 @@
     <a-entity class="pez azul" gltf-model="./assets/models/fish5.glb" position="5 5 -16.101" dynamic-body>
       <a-animation attribute="rotation" dur="20000" to="0 180 0" easing="linear" repeat="indefinite"></a-animation>
     </a-entity>
-
 
     <a-entity class="pez verde" gltf-model="./assets/models/fish3.glb" position="-13.68633 0.901 -17.22004"
       dynamic-body>
@@ -70,12 +94,11 @@
       dynamic-body>
       <a-animation attribute="rotation" dur="10000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
     </a-entity>
-
-
-
-
   </a-scene>
 </body>
+
+
+
 <script src="https://codechangers.com/camps2019/vr/shoot-partial.js"></script>
 <script src="assets/js/script.js"></script>
 
