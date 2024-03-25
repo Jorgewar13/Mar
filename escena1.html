@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/alvinwan/aframe-low-poly@0.0.2/dist/aframe-low-poly.min.js"></script>
   <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
@@ -31,6 +32,9 @@
   <a-scene fog="type: linear; color: #363ABF; near:20; far:100" frustum-culling="true" joystick cursor="rayOrigin: mouse">
     <a-sky color="#5183E6"></a-sky>
 
+    <a-text class="texto prueba" value="¿Cuánto tiempo tardan en descomponerse los plásticos?" color="black" position="0 2.469 -2.381" class="textoprueba" font="assets/font/FuzzyBubbles-Regular-msdf.json" text="color: #0affef; align: center; negate: false"></a-text>
+    <a-entity class="textoprueba" text="value:Camión; color:#FFFFFF; shader: msdf; font:FuzzyBubbles-Regular-msdf.json;" scale="15 15 15" position="6.7 1 -2"></a-entity>
+
   <!--logo-->
   <a-entity class="loogo" gltf-model="./assets/models/logoplastic.gltf" scale="60 60 60" position="0.103 4.348 -4.826"></a-entity>
 
@@ -42,7 +46,9 @@
         dur="9000"></a-animation>
     </a-sky>
 
-  <!-- pescadoazul-->
+  
+  
+    <!-- pescadoazul-->
     <a-entity>
       <a-entity animation-mixer gltf-model="./assets/models/fish.glb" scale="0.5 0.5 0.5"
         position="4.568 1.262 -14.048"></a-entity>

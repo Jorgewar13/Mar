@@ -27,7 +27,6 @@
 
 <body>
   <a-scene cursor="rayOrigin: mouse">
-
     <!-- fondo -->
     <a-entity class="fondo"
       environment="preset: yavapai; groundColor: #6AFBDE;  groundColor2: #d0fe7c; horizonColor: #585fbb; skyColor: blue; dressingColor: #ffff"
@@ -36,9 +35,9 @@
         light="type: hemisphere; color: #8080ff; intensity: 0.6; groundColor: #f0f0f0"></a-entity>
     </a-entity>
 
-    <!--¿cuánto tiempo tardan en descomponerse?-->
-    <a-image src="assets/models/pregunta.png" width="3" height="1.5" material="" geometry="width: 4.8; height: 0.16"
-      position="0 2.469 -2.38056"></a-image>
+    <!--¿cuánto tiempo tardan en descomponerse los plásticos?-->
+    <a-text value="¿Cuánto tiempo tardan en descomponerse los plásticos?" color="black" position="0 2.469 -2.381" class="textoprueba" font="assets/font/BelfastGroteskRegular-msdf.json" text="color: #0affef; align: center; negate: false"></a-text>
+     
 
     <!--lataceleste-->
     <a-entity id="card1" click-handler-card1 data-id="65f5832cbdf8b55b6cc98212"
