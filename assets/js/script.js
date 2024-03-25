@@ -1,3 +1,14 @@
+function actualizarPuntaje() {
+  const scoreText = document.getElementById('scoreText');
+  let score = parseInt(scoreText.getAttribute('value').split(':')[1].trim()); // Obtener el puntaje actual
+  score++;
+  scoreText.setAttribute('value', `Score: ${score}`);
+  
+  // Verificar si todos los elementos objetivo han sido eliminados
+  if (document.querySelectorAll('.target').length === 0) {
+    console.log('you win');
+  }
+}
 
 const shoot = () => {
   const bullet = document.createElement("a-sphere");
@@ -22,16 +33,8 @@ const shootCollided = event => {
     myScene.removeChild(event.detail.target.el);
     myScene.removeChild(event.detail.body.el);
     
-    // Incrementar el puntaje y actualizar el texto en pantalla
-    const scoreText = document.getElementById('scoreText');
-    let score = parseInt(scoreText.getAttribute('value').split(':')[1].trim()); // Obtener el puntaje actual
-    score++;
-    scoreText.setAttribute('value', `Score: ${score}`);
-    
-    // Verificar si todos los elementos objetivo han sido eliminados
-    if (document.querySelectorAll('.target').length === 0) {
-      console.log('you win');
-    }
+    // Llama a la función para actualizar el puntaje
+    actualizarPuntaje();
   }
 };
 
@@ -40,4 +43,3 @@ document.onkeydown = event => {
     shoot();
   }
 };
-
