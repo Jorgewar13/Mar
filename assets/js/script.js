@@ -17,7 +17,7 @@ const shoot = () => {
   bullet.setAttribute("velocity", getDirection(myCamera, 30));
   bullet.setAttribute("dynamic-body", true);
   bullet.setAttribute("radius", 0.5);
-  bullet.setAttribute("src", "https://i.imgur.com/H8e3Vnu.png ");
+  bullet.setAttribute("src", "https://images.unsplash.com/photo-1620503374956-c942862f0372?q");
   myScene.appendChild(bullet);
   bullet.addEventListener('collide', shootCollided); // cuando hay una collide(evento) choque entre objetos se activa la funcion shootCollided(manejador de ebventos)
 };

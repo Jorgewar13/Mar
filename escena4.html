@@ -12,10 +12,9 @@
   <a-scene id="myScene">
 
     <!--burbuja-->
-    <a-sky class="burbuja" src="./assets/models/burbuja.png" opacity="0.5" repeat="10 10" scale="0.01 0.01 0.01" position="0 11.036 -0.339" rotation="0.882 -92.115 0" geometry="primitive:cylinder">
+    <a-sky class="burbuja" src="./assets/models/burbuja.png" opacity="0.5" repeat="10 10" scale="0.01 0.01 0.01" position="0 9.998 -0.339" rotation="0.439 135.218 0" geometry="primitive:cylinder">
       <a-animation attribute="rotation" to="0 360 0" dur="50000" easing="linear" repeat="indefinite"></a-animation>
     </a-sky>
-    
 
     <!--luz-->
     <a-light type="directional" castShadow="true" intensity="0.4" color="#D0EAF9;" position="5 3 1"></a-light>
@@ -43,12 +42,6 @@
       rotation="-90 0 0"></a-plane>
 
 
-    
-    <!-- <a-camera id="myCamera" position="0 1 0">
-      <a-cursor intersection-spawn="event: click; mixin: voxel"></a-cursor>
-    </a-camera> -->
-
-
     <!--Plasticos-->
     <a-entity gltf-model="./assets/models/bottle1.glb" static-body class="target" color="white" radius="1"
       position="2 3 -5"><a-animation attribute="rotation" dur="20000" to="90 90 0" easing="linear"
@@ -65,9 +58,14 @@
         repeat="indefinite"></a-animation>
     </a-entity>
 
-    <a-entity gltf-model="./assets/models/bolsa1.glb" static-body class="target" color="white" radius="1"
-      position="2 3 -10">
+    <a-entity gltf-model="./assets/models/bolsa1.glb" static-body="sphereRadius:NaN" class="target" color="white" radius="1" position="2 3 -10" scale="8 8 8" velocity="">
     </a-entity>
+
+    <a-entity gltf-model="https://cdn.glitch.global/164f55ea-4cfb-4e4e-bafe-17113710a962/Coral.glb?v=1711484455903" static-body="sphereRadius:NaN" class="target" color="white" radius="1" position="-17.471 -0.246 -28.754" scale="0.1 0.1 0.1" velocity="">
+    </a-entity>
+
+   
+   
 
     <!--lata verde-->
     <a-entity gltf-model="./assets/models/lata2.glb" static-body="sphereRadius:NaN" class="target" color="white" radius="1" position="-1.774 2.586 -3.722" velocity="">
@@ -75,24 +73,40 @@
         repeat="indefinite"></a-animation>
     </a-entity>
 
+
+    <!--roca-->
+    <a-entity gltf-model="https://cdn.glitch.global/164f55ea-4cfb-4e4e-bafe-17113710a962/Gold%20Rocks.glb?v=1711484199192" static-body="sphereRadius:NaN" class="target" color="white" radius="1" position="14.633 -0.643 -12.058" velocity="" rotation="22.085 0 0" scale="8 8 8">
+    </a-entity>
+
     <!--Peces-->
     <a-entity class="pez marron" gltf-model="./assets/models/fish2.glb" position="9.199 0.901 -16.101" dynamic-static>
-      <a-animation attribute="rotation" dur="20000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
+      <a-animation attribute="position" dur="9000" to="0 5 -34.165" easing="linear" direction="alternate"
+      repeat="indefinite">
+    </a-animation>
+      </a-entity>
+
+      <a-entity class="pez azul" gltf-model="./assets/models/fish5.glb" position="-15.121 3.83 -11.866" dynamic-body="sphereRadius:NaN" velocity="">
+        <a-animation attribute="position" dur="9000" to="2 0 2" easing="linear" direction="alternate" repeat="indefinite">
+      </a-animation>
     </a-entity>
 
-    <a-entity class="pez azul" gltf-model="./assets/models/fish5.glb" position="5 5 -16.101" dynamic-body>
-      <a-animation attribute="rotation" dur="20000" to="0 180 0" easing="linear" repeat="indefinite"></a-animation>
-    </a-entity>
+    <a-entity class="pez verde" gltf-model="./assets/models/fish3.glb" position="-10.455 3.603 -16.746" dynamic-body="sphereRadius:NaN" velocity="">
+      <a-animation attribute="position" dur="9000" to="7 1.83153 -34.165" easing="linear" direction="alternate" repeat="indefinite">
+    </a-animation>
+  </a-entity>
 
-    <a-entity class="pez verde" gltf-model="./assets/models/fish3.glb" position="-13.68633 0.901 -17.22004"
-      dynamic-body>
-      <a-animation attribute="rotation" dur="20000" to="0 -360 0" easing="linear" repeat="indefinite"></a-animation>
-    </a-entity>
+  <a-entity class="pez amarillo" gltf-model="./assets/models/fish4.glb" position="0.812 2.58 -10.033" dynamic-body="sphereRadius:NaN" velocity="" rotation="0 -20 0">
+    <a-animation attribute="position" dur="9000" to="0 5 15" easing="linear" direction="alternate" repeat="indefinite">
+  </a-animation>
+</a-entity>
 
-    <a-entity class="pez amarillo" gltf-model="./assets/models/fish4.glb" position="-9.424 1.83153 -34.165"
-      dynamic-body>
-      <a-animation attribute="rotation" dur="10000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
-    </a-entity>
+    <a-entity class="pez puas" gltf-model="https://cdn.glitch.global/164f55ea-4cfb-4e4e-bafe-17113710a962/Puffer.glb?v=1711480644823" position="6.692 1.832 -14.622" dynamic-body="sphereRadius:NaN" rotation="0 90 0" velocity="">
+      <a-animation attribute="position" dur="9000" to="7 1.83153 -34.165" easing="linear" direction="alternate" repeat="indefinite">
+      </a-animation>
+</a-entity>
+    
+
+    
   </a-scene>
 </body>
 
