@@ -11,6 +11,7 @@
 <body>
   <a-scene id="myScene">
 
+  
     <!--burbuja-->
     <a-sky class="burbuja" src="./assets/models/burbuja.png" opacity="0.5" repeat="10 10" scale="0.01 0.01 0.01" position="0 9.998 -0.339" rotation="0.439 135.218 0" geometry="primitive:cylinder">
       <a-animation attribute="rotation" to="0 360 0" dur="50000" easing="linear" repeat="indefinite"></a-animation>
@@ -104,10 +105,25 @@
       <a-animation attribute="position" dur="9000" to="7 1.83153 -34.165" easing="linear" direction="alternate" repeat="indefinite">
       </a-animation>
 </a-entity>
-    
-
-    
   </a-scene>
+
+  <!--MENU-->
+  <div class="contenedor">
+    <a class="menu" href="escena1.html">
+      <img src="assets/models/logo.png" alt="icono">
+      <p class="enlace">Logo</p>
+    </a>
+    <a class="menu" href="escena1.html">
+      <img src="assets/models/mapa.png" alt="icono">
+      <p class="enlace">Mapa</p>
+    </a>
+    <a class="menu" href="escena1.html">
+      <img src="assets/models/play.png" alt="icono">
+      <p class="enlace">Play</p>
+    </a>
+  </div>
+
+  
 </body>
 
 
