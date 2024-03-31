@@ -1,104 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/alvinwan/aframe-low-poly@0.0.2/dist/aframe-low-poly.min.js"></script>
-  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport">
+  <title>Peces</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+  <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
   <script src="https://cdn.rawgit.com/aframevr/aframe/v1.2.0/dist/aframe-html-shader.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@c-frame/aframe-physics-system@4.2.2/dist/aframe-physics-system.min.js"></script>
-  <script src="/assets/js/script.js"></script>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+
+  <script src="assets/js/scriptcard1.js"></script>
+  <script src="assets/js/fishmove.js"></script>
+
+  <!--boostrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Agregar esta línea -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-
-  <!--ENTRADA-->
-  <!--LOGO Y DESCRIPCION-->
-  <div class="fondo">
-    <!-- <a class="link" href="escena2.html" title="Bienvenido"><img src="assets/models/logoplasctic.png" alt="logo"></a> -->
-    <div class="cont-texto">
-    <p class="entrada">¡Bienvenidos a la "Aventura Oceánica: Rescate del Mar"!<br>Únete a una misión emocionante para eliminar los peligrosos plásticos en nuestros océanos</p>
-    </div>
-  </div>
+  <a-scene cursor="rayOrigin: mouse">
+    <!-- fondo -->
 
 
-  <!--Escena-->
-  <a-scene fog="type: linear; color: #363ABF; near:20; far:100" frustum-culling="true" joystick cursor="rayOrigin: mouse">
-    <a-sky color="#5183E6"></a-sky>
-    <a-text class="texto prueba" value="¿Cuánto tiempo tardan en descomponerse los plásticos?" color="black" position="0 2.469 -2.381" class="textoprueba" font="assets/font/FuzzyBubbles-Regular-msdf.json" text="color: #0affef; align: center; negate: false"></a-text>
-    <a-entity class="textoprueba" text="value:Camión; color:#FFFFFF; shader: msdf; font:FuzzyBubbles-Regular-msdf.json;" scale="15 15 15" position="6.7 1 -2"></a-entity>
-  <!--logo-->
-  <a-entity class="loogo" gltf-model="./assets/models/logoplastic.gltf" scale="60 60 60" position="0.103 4.348 -4.826"></a-entity>
+    <a-entity class="fondo"
+      environment="preset: yavapai; groundColor: #6AFBDE;  groundColor2: #d0fe7c; horizonColor: #585fbb; skyColor: blue; dressingColor: #ffff"
+      position="0 -1 0">
+      <a-entity class="environment" position="0 50 0"
+        light="type: hemisphere; color: #8080ff; intensity: 0.6; groundColor: #f0f0f0"></a-entity>
+    </a-entity>
 
-  <!--burbujas-->
-    <a-sky class="burbuja" src="./assets/models/burbuja.png" opacity="0.5" repeat="20 20" scale="0.006 0.006 0.006"
-      animation="property: rotation; to: 90 0 0; dur: 16000; loop: true" rotation="0 -85.288 0"
-      position="-5.748 4.454 -0.339" geometry="primitive:cylinder">
-      <a-animation attribute="rotation" from="0 0 0" to="0 -360 0" repeat="indefinite" direction="alternate"
-        dur="9000"></a-animation>
+    
+    <!--¿cuánto tiempo tardan en descomponerse los plásticos?-->
+    <a-text value="¿Cuánto tiempo tardan en descomponerse los plásticos?" color="black" position="0 2.469 -2.381" class="textoprueba" font="assets/font/BelfastGroteskRegular-msdf.json" text="color: #0affef; align: center; negate: false"></a-text>
+     
+
+    <!--lataceleste-->
+    <a-entity id="card1" click-handler-card1 data-id="65f5832cbdf8b55b6cc98212"
+      animation="property: rotation; to: 0 -360 0; loop: true; dur: 10000" gltf-model="./assets/models/lata2.glb"
+      scale="1 1 1" position="-2.30184 1.262 -2.708" rotation="0 -58.475 0"></a-entity>
+
+    <!--Botella1-->
+    <a-entity id="card2" position="-1.19956 0.5 -3" rotation="52.674 175.641 0" click-handler-card2
+      data-id="65f5931cbdf8b55b6cc98216" animation="property: rotation; to: 0 360 0; loop: true; dur: 40000"
+      gltf-model="./assets/models/bottle1.glb" scale=""></a-entity>
+
+    <!--bolsas negras con llantas-->
+    <a-entity id="card3" position="2.09009 -1.045 -4.26" rotation="5 20 0" click-handler-card3="" data-id="65f872cb11c160f7e5ab7d1a" gltf-model="./assets/models/bolsas2.glb" scale="3 3 3">
+    </a-entity>
+
+    <!--Burbuja blanca-->
+    <a-entity material="" class="burbuja blanca" gltf-model="./assets/models/burbujita.glb" animation="property: rotation; to: 0 -360 0; loop: true; dur: 6000" scale="10 10 10" position="-20.217 3.017 -14.048" rotation="0 119.99999999999999 0"></a-entity>
+
+    <a-entity material="" class="burbuja blanca" gltf-model="./assets/models/burbujita.glb"
+      animation="property: rotation; to: 0 -360 0; loop: true; dur: 6000" scale="10 10 10"
+      position="16.26838 3.017 -14.048" rotation="0 -217.2420516558569 0">
+    </a-entity>
+
+
+    <!--pez marron-->
+    <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 20000">
+      <a-entity class="pez marron" fish-move position="9.199 0.901 -16.101" gltf-model="./assets/models/fish2.glb"
+        rotation="0.76 300 0.59"></a-entity>
+    </a-entity>
+
+    <!--pez azul-->
+    <a-entity animation="property: rotation; to: 0 180 0; loop: true; dur: 20000">
+      <a-entity class="pez azul" fish-move position="5 5 -16.101" gltf-model="./assets/models/fish5.glb"
+        rotation="0.76 300 0.59"></a-entity>
+    </a-entity>
+
+    <!--pez verde-->
+    <a-entity animation="property: rotation; to: 0 -360 0; loop: true; dur: 20000">
+      <a-entity class="pez verde" fish-move position="-13.68633 0.901 -17.22004" gltf-model="./assets/models/fish3.glb"
+        rotation="0.76 -660 0"></a-entity></a-entity>
+
+    <!--pez amarillo-->
+    <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 20000">
+      <a-entity class="pez amarillo" fish-move position="-9.424 1.83153 -34.165" gltf-model="./assets/models/fish4.glb"
+        rotation="0.76 -100 0"></a-entity>
+    </a-entity>
+
+    <!--burbujas png-->
+    <a-sky class="burbuja" src="./assets/models/burbuja.png" opacity="0.5" repeat="7 10" scale="0.2 0.2 0.2"
+      animation="property: rotation; to: 90 0 0; dur: 16000; loop: true" class="copo" rotation="2.29 4.20996 0"
+      position="0 5.93027 -0.33928">
     </a-sky>
-
-  
-  
-    <!-- pescadoazul-->
-    <a-entity>
-      <a-entity animation-mixer gltf-model="./assets/models/fish.glb" scale="0.5 0.5 0.5"
-        position="4.568 1.262 -14.048"></a-entity>
-      <a-animation attribute="rotation" from="0 0 0" to="0 -360 0" repeat="indefinite" direction="alternate" dur="8000">
-      </a-animation>
-    </a-entity>
-
-  <!--play-->
-  <a-box class="play" gltf-model="./assets/models/play.gltf" scale="60 60 60" position="0.103 4.348 -4.826"></a-box>
-    
-
-  
-  <!--medusa -->
-    <a-entity animation-mixer="" gltf-model="./assets/models/medusa.glb" scale="0.015 0.015 0.015" position="-8.731 0.243 -11.263" rotation="-2.64 1.18 0" class="medusa">
-      <a-animation attribute="rotation" from="-5 0 0" to="5 5 0" repeat="indefinite" direction="alternate"></a-animation>
-    </a-entity>
-
-    <!--ejemplo de icosand -->
-    <!-- <a-icosahedron static-body="sphereRadius:NaN" class="target" color="white" radius="1" position="-8.362 0.34 -5" rotation="19.387 0 -0.204">
-      <a-animation attribute="rotation" from="5 0 -5" to="20 0 0" repeat="indefinite" direction="alternate" dur="800"></a-animation>
-    </a-icosahedron> -->
-
-    <!-- Lights -->
-    <a-light type="directional" castShadow="true" intensity="0.4" color="#D0EAF9;" position="5 3 1"></a-light>
-    <a-light intensity="0.8" type="ambient" color="#B4C5EC"></a-light>
-
-    <!-- Camera -->
-    <a-camera position="0 0 2.5"></a-camera>
-
-    <!-- Icebergs -->
-    <lp-cone class="iceberg" amplitude-variance="0.25" segments-radial="5" segments-height="3" height="1"
-      radius-top="0.15" radius-bottom="0.5" position="3 -0.1 -1.5">
-      <a-animation attribute="rotation" from="-5 0 0" to="5 0 0" repeat="indefinite"
-        direction="alternate"></a-animation>
-      <a-animation attribute="position" from="3 -0.2 -1.5" to="4 -0.2 -2.5" repeat="indefinite" direction="alternate"
-        dur="12000" easing="linear"></a-animation>
-    </lp-cone>
-    <lp-cone class="iceberg" amplitude="0.12" segments-radial="7" segments-height="3" height="0.5" radius-top="0.25"
-      radius-bottom="0.35" position="-3 -0.1 -0.5">
-      <a-animation attribute="rotation" from="0 0 -5" to="5 0 0" repeat="indefinite" direction="alternate"
-        dur="1500"></a-animation>
-      <a-animation attribute="position" from="-4 -0.2 -0.5" to="-2 -0.2 -0.5" repeat="indefinite" direction="alternate"
-        dur="15000" easing="linear"></a-animation>
-    </lp-cone>
-
-    
-
-    <!-- Ocean -->
-    <a-ocean depth="50" width="50" opacity="0.5" amplitude="0" amplitude-variance="0.15" speed="1.5" speed-variance="1"
-      density="50" position="-2.47 4.462 0.441"></a-ocean>
-    <a-ocean depth="50" width="50" opacity="0.5" amplitude="0" amplitude-variance="0.15" speed="1.5" speed-variance="1"
-      density="30" position="-2.47 -0.18 0.441" color="#E1D89D"></a-ocean>
   </a-scene>
 
 
-</body>
+  <!--MENU-->
+  <div class="contenedor">
+    <a class="menu" href="escena1.html">
+      <img src="assets/models/logo.png" alt="icono">
+      <p class="enlace">Home</p>
+    </a>
+    <a class="menu" href="escena1.html">
+      <img src="assets/models/mapa.png" alt="icono">
+      <p class="enlace">Mapa</p>
+    </a>
+    <a class="menu" href="escena1.html">
+      <img src="assets/models/play.png" alt="icono">
+      <p class="enlace">Play</p>
+    </a>
+  </div>
+  
 
+  <!--Modal-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitulo"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="contenido" id="modalContenido"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
 </html>
