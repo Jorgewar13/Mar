@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     init: function () {
       var el = this.el;
       el.addEventListener('click', function () {
-        obtenerInformacionYMostrarModal(el.getAttribute('data-id')); // Modificar aquí
+        obtenerInformacionYMostrarModal(el.getAttribute('data-id'));
       });
     }
   });
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     init: function () {
       var el = this.el;
       el.addEventListener('click', function () {
-        obtenerInformacionYMostrarModal(el.getAttribute('data-id')); // Modificar aquí
+        obtenerInformacionYMostrarModal(el.getAttribute('data-id'));
       });
     }
   });
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     init: function () {
       var el = this.el;
       el.addEventListener('click', function () {
-        obtenerInformacionYMostrarModal(el.getAttribute('data-id')); // Modificar aquí
+        obtenerInformacionYMostrarModal(el.getAttribute('data-id'));
       });
     }
   });
