@@ -3,11 +3,9 @@ body, html {
     padding: 0;
     height: 100%;
 }
-
 .a-enter-vr-button {
     display: none;
 }
-
 .background {
     position: fixed;
     top: 0;
@@ -17,14 +15,12 @@ body, html {
     object-fit: cover;
     z-index: -1;
 }
-
 /* Estilos para el logogatitos */
 .logogatitos {
     position: fixed;
     top: 20px; /* Ajusta este valor según sea necesario */
     left: 20px; /* Ajusta este valor según sea necesario */
 }
-
 /* Estilos para el logojuego */
 .logojuego {
     position: fixed;
@@ -32,7 +28,6 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 /* Estilos para el botón play */
 .play {
     position: fixed;
@@ -53,7 +48,7 @@ body, html {
 }
 
 .pezazul {
-    
+    position: fixed;
     bottom: 0; /* Alineado con la parte inferior */
     right: -5%; /* Alineado con la parte izquierda */
     width: 30%; /* Ajustar al tamaño deseado */
@@ -76,10 +71,11 @@ body, html {
     height: 300px; /* Altura del contenedor del mapa */
     overflow: hidden; /* Oculta cualquier parte del mapa que esté fuera del contenedor */
 }
+
 .atlantico:target ~ #mapa-container .mapa {
     transform: translateX(-100px) translateY(-100px); /* Mueve el mapa a la posición deseada */
 }
-.
+
 .mapa {
     position: fixed;
     top: 50%;
@@ -87,9 +83,8 @@ body, html {
     transform: translate(-50%, -50%);
     width: 80%; /* Ajustar al tamaño deseado */
     height: auto; /* Para mantener la proporción de la imagen */
-    z-index: -3:
+    z-index: -1;
 }
-
 
 .logojuegopeque {
     position: fixed;
@@ -108,11 +103,11 @@ body, html {
     z-index: 1;
 }
 
-.cangrejomapa {
+.pulpomapa {
     position: fixed;
     top: 0; /* Alineado con la parte inferior */
-    right: 50%; /* Alineado con la parte izquierda */
-    width: 10%; /* Ajustar al tamaño deseado */
+    right: 40%; /* Alineado con la parte izquierda */
+    width: 18%; /* Ajustar al tamaño deseado */
     height: auto; /* Para mantener la proporción de la imagen */
     z-index: 1;
 }
@@ -126,28 +121,101 @@ body, html {
     z-index: 1;
 }
 
+.tortugaderecha{
+    position: fixed;
+    bottom: 0; /* Alineado con la parte inferior */
+    left: -20%; /* Alineado con la parte izquierda */
+    width: 35%; /* Ajustar al tamaño deseado */
+    height: auto; /* Para mantener la proporción de la imagen */
+    z-index: 1;
+
+}
 .oceanomares {
     z-index: -3;
 }
 
 @font-face {
     font-family: 'Belfast'; /* Nombre de la fuente Belfast */
-    src: url('fonts/TextFonts.net_belfast-grotesk-font-family/Belfast Grotesk Bold.ttf') 
+    src: url('assets/fonts/TextFonts.net_belfast-grotesk-font-family/Belfast Grotesk Black.ttf') 
     format('truetype'); /* Ruta de la fuente y formato */
 }
 /* Estilos para los botones del mapa */
 .textobotonesmapa {
     position:relative;
     font-family: 'Belfast', sans-serif; /* Utilizar la tipografía Belfast */
-    color: #da4f58; /* Color inicial del texto */
+    color: #ff00dd; /* Color inicial del texto */
     text-decoration:none; /* Eliminar subrayado del enlace */
     font-size:170%;
     text-align: center;
-    
-    
 }
 
 .textobotonesmapa:hover {
     color: #51ff21; /* Cambiar color al pasar el ratón */
-   
 }
+
+.atlantico{
+    position: absolute;
+    top: 30%; /* Alineado con la parte inferior */
+    left: 20%; /* Alineado con la parte izquierda */
+    width: 30%; /* Ajustar al tamaño deseado */
+    height: auto;  
+    letter-spacing: -1px;
+}
+
+.pacifico{
+    position: absolute;
+    top: 50%; /* Alineado con la parte inferior */
+    left: 5%; /* Alineado con la parte izquierda */
+    width: 30%; /* Ajustar al tamaño deseado */
+    height: auto;  
+    letter-spacing: -1px;
+}
+
+.pacifico2{
+    position: absolute;
+    top: 40%; /* Alineado con la parte inferior */
+    right: 2%; /* Alineado con la parte izquierda */
+    width: 30%; /* Ajustar al tamaño deseado */
+    height: auto;  
+    letter-spacing: -1px;
+}
+
+.artico{
+    position: absolute;
+    top: 9%; /* Alineado con la parte inferior */
+    right: 8%; /* Alineado con la parte izquierda */
+    width: 30%; /* Ajustar al tamaño deseado */
+    height: auto;  
+    letter-spacing: -1px;
+    font-size: 90%;
+}
+
+.indico{
+    position: absolute;
+    top: 60%; /* Alineado con la parte inferior */
+    right: 25%; /* Alineado con la parte izquierda */
+    width: 30%; /* Ajustar al tamaño deseado */
+    height: auto;  
+    letter-spacing: -1px;
+}
+.logo-container {
+    position: absolute;
+    top: 20px; /* Ajusta la distancia desde la parte superior según sea necesario */
+    left: 20px; /* Ajusta la distancia desde la izquierda según sea necesario */
+    z-index: 9999; /* Asegura que esté por encima de otros elementos */
+  }
+  .menu-container {
+    display: flex;
+    justify-content: center;
+    z-index: 9999; /* Asegura que esté por encima de otros elementos */
+  }
+  
+  .menu {
+    width: 90%; /* Reducir el tamaño en un 10% */
+    z-index: 9999; /* Asegura que esté por encima de otros elementos */
+  }
+
+  #cursor {
+    z-index: 9999;
+  }
+  
