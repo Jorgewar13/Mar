@@ -1,20 +1,104 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AvatarLogin</title>
-  <link rel="icon" type="png" href="assets/img/faviconbotella.png">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script> 
+  <title>Selección de Avatar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('assets/img/background.jpg'); /* Agregar fondo */
+      background-size: cover;
+    }
+    .container {
+      text-align: center;
+      
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .logo {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #ffffff;
+      font-size: 36px;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .avatar-selection {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .avatar-button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 24px;
+      margin: 0 20px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .avatar-button:hover {
+      background-color: #45a049;
+    }
+    .avatar-preview {
+      border: 2px solid #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 300px;
+    }
+    .avatar-preview h2 {
+      color: #ffffff;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .avatar-preview img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-
 <body>
-    <div>
-        <img src="assets/img/background.jpg" type="jpg" class="background">
-        <a href="index.html" class="logojuegopeque">
-            <img src="assets/img/logojuegopeque.png" type="png">
-          </a>
+  <div class="container">
+    <a href="index.html">
+      <img src="assets/img/logojuego.png" alt="Logo del juego" class="logo"> <!-- Agregar logo -->
+    </a>
+    <h1>Elige tu Avatar</h1>
+    <div class="avatar-selection">
+      <button class="avatar-button" onclick="seleccionarAvatar('assets/models/fish.glb', 'assets/img/Clownfish.png')">
+        Nemo
+      </button>
+      <button class="avatar-button" onclick="seleccionarAvatar('assets/models/fish2.glb', 'assets/img/Fish.png')">
+        Timmy
+      </button>
+    </div>
+    <div class="avatar-preview" id="avatarPreview">
+      <h2>Vista previa</h2>
+      <img src="assets/img/Clownfish.png" alt="Avatar Preview" id="previewImage">
+    </div>
+  </div>
+
+  <script>
+    function seleccionarAvatar(avatarModel, avatarImage) {
+      // Cambiar la vista previa del avatar seleccionado
+      const previewImage = document.getElementById('previewImage');
+      previewImage.src = avatarImage;
+    }
+  </script>
 </body>
 </html>
