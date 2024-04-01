@@ -3,7 +3,6 @@ window.addEventListener('load', initScene);
 let score = 0; // Definimos la puntuación inicial
 
 function initScene() {
-    // No necesitamos crear los plásticos dinámicamente si ya están definidos en el HTML
 }
 
 // Registramos el componente 'shootable' para hacer que los plásticos sean eliminables

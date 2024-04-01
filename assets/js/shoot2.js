@@ -2,9 +2,11 @@ AFRAME.registerComponent('hit-handler', {
   dependencies: ['material'],
 
   init: function () {
-    var color;
-    var el = this.el;
-    var scene = document.querySelector('a-scene');
+    let color;
+    let el = this.el;
+    let scene = document.querySelector('a-scene');
+    let bubbleModel = document.getElementById('bubbleModel');
+    let bubbleSound = document.getElementById('bubbleSound');
 
     color = new THREE.Color();
     color.set('#666');
@@ -20,17 +22,14 @@ AFRAME.registerComponent('hit-handler', {
       el.components.material.material.color.copy(color);
       el.parentElement.removeChild(el); // Eliminar el objeto cuando muere
       scene.emit('score', {points: 1}); // Emitir evento 'score' al destruir el objeto
+      bubbleModel.setAttribute('visible', true); // Mostrar el modelado de burbujas
+      bubbleSound.components.sound.playSound(); // Reproducir sonido de burbujas
+
+      // Ocultar la burbuja y detener el sonido después de 2 segundos (ajusta el tiempo según tus necesidades)
+      setTimeout(() => {
+        bubbleModel.setAttribute('visible', false);
+        bubbleSound.components.sound.stopSound();
+      }, 500);
     });
   }
-});
-
-// Escuchar evento 'score' y actualizar la variable scoreText
-document.addEventListener('DOMContentLoaded', function () {
-  var scoreText = document.getElementById('scoreText');
-  var score = 0;
-
-  document.querySelector('a-scene').addEventListener('score', function (event) {
-    score += event.detail.points;
-    scoreText.setAttribute('value', 'Score: ' + score);
-  });
 });

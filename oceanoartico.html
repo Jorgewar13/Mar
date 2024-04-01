@@ -3,6 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="png" href="assets/img/faviconbotella.png">
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
     <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
@@ -10,7 +11,7 @@
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.rawgit.com/aframevr/aframe/v1.2.0/dist/aframe-html-shader.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@c-frame/aframe-physics-system@4.2.2/dist/aframe-physics-system.min.js"></script>
-    <script src="assets/js/escena3.js"></script>
+    <script src="assets/js/cursor.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -97,9 +98,9 @@
         </a-entity>
 
         <!--bolsas negras con llantas-->
-        <a-entity id="enemy5" position="1,5 0 3.54023" rotation="5 20 0" click-handler-card3=""
-            data-id="65f872cb11c160f7e5ab7d1a" gltf-model="./assets/models/bolsas2.glb" scale="1 1 1"
-            raycaster="" shootable=""></a-entity>
+        <a-entity class="plastic" id="enemy5" position="1,5 0 3.54023" rotation="5 20 0"
+             gltf-model="./assets/models/bolsas2.glb" scale="1 1 1"
+            raycaster shootable></a-entity>
 
 
         <!--pez marron-->

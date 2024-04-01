@@ -11,6 +11,8 @@
   <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
   <script src="assets/js/shoot1.js"></script>
   <script src="assets/js/shoot2.js"></script>
+  <script src="assets/js/score.js"></script>
+  <script src="assets/js/burbuja.js"></script>
 </head>
 
 <body>
@@ -32,8 +34,15 @@
         light="type: hemisphere; color: #8080ff; intensity:0.8; groundColor: #f0f0f0"></a-entity>
     </a-entity>
 
+    <!--Sonido de disparo-->
+    <a-sound id="shootSound" src="sound/shoot.ogg"></a-sound>
 
+   <!--imagen de burbuja disparo-->
+   <a-entity id="bubbleModel" gltf-model="assets/models/burbujita.glb" scale="0.7 0.7 0.7" visible="false" bubble-position></a-entity>
    
+   <!--sonido de burbuja-->
+    <a-sound id="bubbleSound" src="sound/burbuja.mp3"></a-sound>
+
 
     <!--Cámara-->
     <a-camera id="camera" position="-1 0 0" shooter click-to-shoot>
@@ -125,6 +134,5 @@
     <p class="enlace">Mapa</p>
   </a>
 </div>
-
 </body>
 </html>

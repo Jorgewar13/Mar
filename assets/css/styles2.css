@@ -147,6 +147,7 @@ body, html {
     text-decoration:none; /* Eliminar subrayado del enlace */
     font-size:170%;
     text-align: center;
+    font-weight: 800;
 }
 
 .textobotonesmapa:hover {
