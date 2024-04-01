@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 /* LOGO Y DESCRIPCION - escena1*/
 
@@ -23,9 +23,9 @@
     
 }
 
-.entrada {
+.entrada{
     color: rgb(255, 255, 255);
-    font-family: "Fuzzy Bubbles", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
     font-style: normal;
     font-size: 20px; 
     text-align: center;
@@ -60,7 +60,7 @@ a-scene {
 a-scene img
 {
   display:flex;
-  width: 100px;
+  width: 50px;
 }
 
 .menu{
@@ -71,10 +71,14 @@ a-scene img
     text-decoration:none;
 }
 
+.menu img{
+    width: 100px;
+}
+
 /* MODAL - escena3*/
 .contenido {
     color:aqua;
-    font-family: "Fuzzy Bubbles", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
 }
 
 .modal-content {
@@ -86,17 +90,17 @@ a-scene img
 .enlace{
     color:white;
     text-decoration: none;
-    font-family: "Fuzzy Bubbles", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
 }
 
 .modal-content {
     background-color: transparent !important;
     border: 0px !important;
-    font-family: "Fuzzy Bubbles", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
 }
 
 .modal-header {
     border: 0px !important;
-    font-family: "Fuzzy Bubbles", sans-serif;
+    font-family: "Space Grotesk", sans-serif;
 }
 

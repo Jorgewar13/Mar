@@ -16,7 +16,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@c-frame/aframe-physics-system@4.2.2/dist/aframe-physics-system.min.js"></script>
   <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
 
-  <script src="assets/js/scriptcard.js"></script>
+  <script src="assets/js/scriptcard1.js"></script>
   <script src="assets/js/fishmove.js"></script>
 
   <!--boostrap-->
@@ -27,8 +27,9 @@
 
 <body>
   <a-scene cursor="rayOrigin: mouse">
-
     <!-- fondo -->
+
+
     <a-entity class="fondo"
       environment="preset: yavapai; groundColor: #6AFBDE;  groundColor2: #d0fe7c; horizonColor: #585fbb; skyColor: blue; dressingColor: #ffff"
       position="0 -1 0">
@@ -36,9 +37,10 @@
         light="type: hemisphere; color: #8080ff; intensity: 0.6; groundColor: #f0f0f0"></a-entity>
     </a-entity>
 
-    <!--¿cuánto tiempo tardan en descomponerse?-->
-    <a-image src="assets/models/pregunta.png" width="3" height="1.5" material="" geometry="width: 4.8; height: 0.16"
-      position="0 2.469 -2.38056"></a-image>
+    
+    <!--¿cuánto tiempo tardan en descomponerse los plásticos?-->
+    <a-text value="¿Cuánto tiempo tardan en descomponerse los plásticos?" color="black" position="0 2.469 -2.381" class="textoprueba" font="assets/fonts/BelfastGroteskRegular-msdf.json" text="color: #0affef; align: center; negate: false"></a-text>
+     
 
     <!--lataceleste-->
     <a-entity id="card1" click-handler-card1 data-id="65f5832cbdf8b55b6cc98212"
@@ -86,7 +88,6 @@
         rotation="0.76 -100 0"></a-entity>
     </a-entity>
 
-
     <!--burbujas png-->
     <a-sky class="burbuja" src="./assets/models/burbuja.png" opacity="0.5" repeat="7 10" scale="0.2 0.2 0.2"
       animation="property: rotation; to: 90 0 0; dur: 16000; loop: true" class="copo" rotation="2.29 4.20996 0"
@@ -95,15 +96,18 @@
   </a-scene>
 
 
-
-
   <!--MENU-->
   <div class="contenedor">
-    <a class="menu" href="escena1.html">
-      <img src="assets/models/pez.svg" alt="icono">
+    <a class="menu" href="index.html">
+      <img src="assets/models/logo.png" alt="icono">
       <p class="enlace">Home</p>
     </a>
+    <a class="menu" href="mapa.html">
+      <img src="assets/models/mapa.png" alt="icono">
+      <p class="enlace">Mapa</p>
+    </a>
   </div>
+  
 
   <!--Modal-->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -125,5 +129,7 @@
       </div>
     </div>
   </div>
+
+  
 </body>
 </html>
